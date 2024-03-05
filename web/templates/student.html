@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Students Page</title>
+  <style>
+    body {
+      background-color:#F0F8FF;
+           }
+           header {
+               background-color:MidnightBlue;
+               color: #fff;
+               padding: 10px;
+               text-align: center;
+           }
+           footer {
+               background-color: MidnightBlue;
+               padding: 10px;
+               color: #fff;
+               text-align: center;
+           }
+   form {
+     margin: 20px auto;
+     padding: 20px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     width: 300px;
+   }
+   
+   /* Apply styles to labels */
+   label {
+     display: block;
+     margin-bottom: 10px;
+   }
+   
+   /* Apply styles to input fields */
+   input[type="text"],
+   input[type="number"],
+   select {
+     width: 100%;
+     padding: 8px;
+     margin-bottom: 10px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+   }
+   
+   
+   
+   /* Style the submit button on hover */
+   input[type="submit"]:hover {
+     background-color: #45a049;
+   }
+   /* Apply styles to the form */
+   form {
+     margin: 20px auto;
+     padding: 20px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+     width: 400px;
+     background-color:skyblue;
+   }
+   
+   /* Apply styles to labels */
+   label {
+     display: block;
+     margin-bottom: 10px;
+   }
+   
+   /* Apply styles to text area */
+   textarea {
+     width: 100%;
+     padding: 8px;
+     margin-bottom: 10px;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+   }
+   
+   button[type="submit"] {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+   
+   
+   
+  </style>
+</head>
+<body>
+<header>
+    <h1>Department of Data Science</h1>
+</header>
+
+<form id="student-form" method="post" action="{% url 'student' %}">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <div class="form-group">
+    <button type="submit">Submit</button>
+  </div>
+</form>
+
+<footer>
+    <p>&copy; 2024 Department of Data Science</p>
+</footer>
+
+<!-- Include jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- JavaScript to handle form submission and display dialog box -->
+<script>
+$(document).ready(function(){
+    $('#student-form').on('submit', function(e){
+        e.preventDefault(); // Prevent form submission
+        var formData = $(this).serialize(); // Serialize form data
+        // Send AJAX request to Django view
+        $.ajax({
+            url: $(this).attr('action'), // Form action URL
+            type: 'POST',
+            data: formData, // Form data
+            success: function(response) {
+                // Display success message in dialog box
+                alert('Submitted successfully');
+                // Optionally, you can redirect to another page after successful submission
+                // window.location.href = '/success-url/';
+            },
+            error: function(xhr, status, error) {
+                // Handle errors if needed
+                console.error(xhr.responseText);
+            }
+        });
+    });
+});
+</script>
+
+</body>
+</html>

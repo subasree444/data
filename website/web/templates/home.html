@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<style>
+
+body {
+    font-family: Serif;
+    margin: 0;
+    padding: 0;
+    background-color:#F0F8FF;
+
+}
+.container {
+    max-width: 1300px;
+    margin: 0 auto; 
+    padding: 0 20px; 
+
+  }
+  
+header {
+    background-color: MidnightBlue;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    display: block; /* Ensures each element starts on a new line */
+    margin-bottom: 5px;
+}
+h2 {
+    font-size: 24px; /* Adjust font size as needed */
+    color: MidnightBlue; /* Adjust color as needed */
+    margin-bottom: 10px; /* Add space between headings and paragraphs */
+  }
+  p {
+    font-size: 18px; /* Adjust font size as needed */
+    line-height: 1.6; /* Adjust line height for better readability */
+    color: #333; /* Adjust color as needed */
+    margin-bottom: 20px;
+    text-align: justify; /* Add space between paragraphs */
+  }
+
+  ol {
+    font-size: 18px; /* Adjust font size as needed */
+    line-height: 1.6; /* Adjust line height for better readability */
+    color: #333; /* Adjust color as needed */
+    margin-bottom: 20px; /* Add space between ordered list and subsequent content */
+  }
+  ol li {
+    margin-bottom: 5px; /* Add space between list items */
+  }
+  div {
+    margin-bottom: 30px; /* Add space between divisions */
+  }
+  
+
+/* Style for nav */
+nav {
+  background-color: skyblue;
+  color:#333;
+  padding:10px;
+}
+
+/* Style for nav ul */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style for nav li */
+nav li {
+  display: inline;
+}
+
+/* Style for nav li a */
+nav li a {
+  display: inline-block;
+  color: #333;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Style for nav li a:hover */
+nav li a:hover {
+  background-color: #fff;
+}
+footer {
+    background-color: MidnightBlue;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Data Science - Holy Cross College</title>
+</head>
+
+
+<header>
+    <h3>Welcome to the Department of Data Science</h3>
+    <p><h4>Holy Cross College(Autonomous)</h4>Thiruchirappalli, Tamil Nadu, India</p>
+</header>
+     <nav>
+        <ul>
+            <li><a href="{% url 'course' %}">Courses</a>
+            <li><a href="{% url 'faculty' %}">Faculty</a></li>
+            <li><a href="{% url 'student' %}">Students</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+    <div>
+        <h2>HISTORY OF THE DEPARTMENT</h2>
+      </div>
+      <div>
+        <p>The PG Department of Data Science, Holy Cross College, (Autonomous), Tiruchirappalli was started in the academic year 2021-2022. An interdisciplinary program spanning a period of two years, it integrates contributions from Artificial Intelligence, Machine Learning, Mathematics and Statistics, to study and evaluate data. The Department aims at making young minds proficient in the rapidly emerging field of Data Science and strengthening their Career prospects by inculcating in- depth expertise in it. Data Science tends to lean more on Machine Learning, Deep Learning, Natural Language Processing and Big Data.</p>
+      </div>
+      <div>
+        <h2>VISION</h2>
+      </div>
+      <div>
+        <p>  Our vision is to build a research identity through the confluence of Data Science and Analytics, Artificial Intelligence, Big Data and Decision Sciences and to build an educational identity through leading Degree Programmes based on Curricular Innovation and Research.</p>
+      </div>
+      <div>
+        <h2>MISSION</h2>
+      </div>
+      <div>
+        <ol>
+          <li>To provide in-depth concepts of Data Science.</li>
+          <li>To forge ahead with state-of-the-art technologies in Data Science.</li>
+          <li>To advance the knowledge and application of data Science in every field/ Sector and multi-disciplinary areas through high-impact Research, Entrepreneurship, Leadership and Innovation.</li>
+          <li>To ascertain the responsible deployment of Data and enable Students acquire the required Technical and Communication skills in order to solve significant problems in business and Society.</li>
+          <li>To enhance Placement prospects of students by providing appropriate employability skills in Data Science</li>
+        </ol>
+      </div>
+      <div>
+        <h2>AIM</h2>
+      </div>
+      <div>
+        <p>The Department of Data Science aims at transforming the students’ skills from retrieving statistical data to gaining insights thereby making digital footprints in the world of data.</p>
+      </div>
+    </div>
+    <footer>
+        &copy; 2024 Department of Data Science - Holy Cross College
+    </footer>
+</body>
+</html>

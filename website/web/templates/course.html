@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Courses</title>
+  <style>
+    /* CSS styles for the courses page */
+    body {
+      font-family: serif;
+      margin: 0;
+      padding: 0;
+      background-color:#F0F8FF;
+
+    }
+    header {
+      background-color: MidnightBlue;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+    footer {
+      background-color: MidnightBlue;
+      padding: 10px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: justify;
+      font-size: 18px; 
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #333;
+      cursor: pointer; /* Change cursor to pointer for clickable links */
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Position the modal */
+      z-index: 1; /* Sit on top of everything */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scrolling if needed */
+      background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
+      padding-top: 60px; /* Place content 60px from the top */
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto; /* Center modal on screen */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; /* Set width of modal */
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Department of Data Science</h2>
+    <h4>Holy Cross College (Autonomous)</h4>
+  </header>
+  <div class="container">
+    <p>Welcome to the Courses page of the Department of Data Science at Holy Cross College (Autonomous). Our department offers a diverse range of courses designed to equip students with the knowledge and skills needed to excel in the dynamic field of data science.</p>
+    <p>Our curriculum covers fundamental principles, advanced techniques, and practical applications of data science, providing students with a comprehensive understanding of this rapidly evolving discipline. Whether you're interested in data analysis, machine learning, artificial intelligence, or big data technologies, we have courses tailored to meet your needs and interests.</p>
+    <p>Each course is taught by experienced faculty members who are experts in their respective fields, ensuring that students receive high-quality instruction and mentorship. Through a combination of lectures, hands-on exercises, projects, and real-world applications, students gain practical experience and problem-solving abilities that prepare them for success in today's data-driven world.</p>
+    <h3>Browse our list of courses below to explore topics such as:</h3>
+    <ul>
+      <li><a onclick="showCourseContent('Fundamentals of Data Science.')">Fundamentals of Data Science</a></li>
+      <li><a onclick="showCourseContent('Internet of Things')">Internet of Things</a></li>
+      <li><a onclick="showCourseContent('Visualization Tools')">Visualization Tools</a></li>
+      <li><a onclick="showCourseContent('Big Data')">Big Data</a></li>
+      <li><a onclick="showCourseContent('Machine Learning')">Machine Learning</a></li>
+      <li><a onclick="showCourseContent('Artificial Intelligence')">Artificial Intelligence</a></li>
+      <li><a onclick="showCourseContent('Deep Learning')">Deep Learning</a></li>
+      <li><a onclick="showCourseContent('Web Technology')">Web Technology</a></li>
+      <li><a onclick="showCourseContent('Web Analytics')">Web Analytics</a></li>
+
+
+
+
+    </ul>
+    <p>Join us on a journey of discovery and exploration as we delve into the exciting world of data science. Whether you're a beginner looking to build a solid foundation or an experienced professional seeking to expand your skills, we have courses suited to every level of expertise.
+
+      Enroll in our courses today and unlock the potential of data science to drive innovation, solve complex problems, and make a meaningful impact in your chosen field.</p>
+    
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2024 Department of Data Science</p>
+  </footer>
+
+  <script>
+    function showCourseContent(courseName) {
+      // Get the modal
+      var modal = document.getElementById("myModal");
+  
+      // Get the modal content element
+      var modalContent = document.getElementById("modal-content");
+  
+      // Populate the modal content based on the selected course
+      switch(courseName) {
+        case 'Fundamentals of Data Science.':
+          modalContent.innerHTML = "<h2>Fundamentals of Data Science.</h2><p>The Fundamentals of Data Science course is designed to provide students with a comprehensive introduction to the core concepts, techniques, and tools used in the field of data science. In today's data-driven world, organizations across various industries are increasingly relying on data science to extract valuable insights from vast amounts of data, driving informed decision-making and innovation.</p>";
+          break;
+        case 'Internet of Things':
+          modalContent.innerHTML = "<h2>Internet of Things</h2><p>The Internet of Things (IoT) refers to the network of interconnected devices, objects, and systems that communicate with each other and exchange data over the internet without human intervention. These devices are embedded with sensors, software, and other technologies that enable them to collect and exchange data, making them smart and capable of performing various tasks autonomously.</p>";
+          break;
+        case 'Visualization Tools':
+          modalContent.innerHTML = "<h2>Visualization Tools</h2><p>Power BI and Tableau are both powerful business intelligence (BI) and data visualization tools that enable users to analyze and visualize data to make informed decisions. </p>";
+          break;
+        case 'Big Data':
+          modalContent.innerHTML = "<h2> Big Data</h2><p>Big data refers to extremely large and complex datasets that cannot be easily processed or managed using traditional data processing applications. These datasets typically contain a wide variety of data types, including structured, semi-structured, and unstructured data, generated from various sources such as social media, sensors, mobile devices, and online transactions.</p>";
+          break;
+        case 'Cloud Computing':
+          modalContent.innerHTML = "<h2> Cloud Computing</h2><p>Cloud computing refers to the delivery of computing services—including servers, storage, databases, networking, software, analytics, and more—over the internet (the cloud) to offer faster innovation, flexible resources, and economies of scale. Rather than owning physical hardware and infrastructure, users can access computing resources on-demand from cloud service providers, paying only for what they use.</p>";
+          break;
+        case 'Machine Learning':
+          modalContent.innerHTML = "<h2>Machine Learning</h2><p>Machine learning is a subset of artificial intelligence (AI) that focuses on developing algorithms and statistical models that enable computers to learn from and make predictions or decisions based on data, without being explicitly programmed to do so. In other words, machine learning algorithms learn from patterns and insights in data to improve their performance over time.</p>";
+          break;
+        
+        default:
+          modalContent.innerHTML = "<h2>No content available for this course</h2>";
+      }
+  
+      // Display the modal
+      modal.style.display = "block";
+    }
+  
+    function closeModal() {
+      // Get the modal
+      var modal = document.getElementById("myModal");
+  
+      // Hide the modal
+      modal.style.display = "none";
+    }
+  
+    // Close the modal when the user clicks anywhere outside of it
+    window.onclick = function(event) {
+      var modal = document.getElementById("myModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
+
+  
